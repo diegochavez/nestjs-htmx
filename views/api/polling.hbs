@@ -1,0 +1,16 @@
+<article class='message is-link' id='message-clicked'>
+  <div class='message-header'>
+    <p>Time stamp {{time}}</p>
+    <button
+      class='delete'
+      hx-get='api/polling'
+      hx-trigger='click'
+      hx-target='#message-clicked'
+      hx-swap='delete'
+      aria-label='delete'
+    ></button>
+  </div>
+  <div class='message-body'>
+    We are pulling this from a request to the service api/clicked check network.
+  </div>
+</article>
