@@ -26,7 +26,8 @@ async function bootstrap() {
     options:{
       partials:{
         header: join('partials', 'header.hbs'),  
-        footer: join('partials', 'footer.hbs'),   
+        footer: join('partials', 'footer.hbs'), 
+        login: join('partials', 'login.hbs'),   
       }
     },
     root: join(__dirname, '..', 'views'),
