@@ -12,13 +12,13 @@ export class AppController {
 
   @Get('/about')
   @Render('pages/about.hbs')
-  about() {
+  aboutPage() {
     return { layout: true, authenticated: this.authenticated };
   }
 
   @Get('/polling')
   @Render('pages/polling.hbs')
-  polling() {
+  pollingPage() {
     return {layout: true, authenticated: this.authenticated};
   }
   
@@ -30,7 +30,7 @@ export class AppController {
 
   @Get('api/polling')
   @Render('api/polling.hbs')
-  clicked(@Res() res) {
+  apiPolling(@Res() res) {
     this.pollingCount++;
     if (this.pollingCount > 10) {
       // HTTP response code 286 and the element will cancel the polling - HTMX docs
@@ -38,7 +38,7 @@ export class AppController {
       this.pollingCount = 0;
     }
     const date = new Date().toUTCString();
-    return {time: date, authenticated: this.authenticated, pollingPercent: this.pollingCount * 10};
+    return {dateTime: date, authenticated: this.authenticated, pollingPercent: this.pollingCount * 10};
   }
 
   @Get('api/auth')
