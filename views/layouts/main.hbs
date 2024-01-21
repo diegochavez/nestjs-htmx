@@ -13,17 +13,8 @@
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css'
     />
-  </head>
-  <body>
-    {{> header}}
-<div class="container is-widescreen">
-
-        {{/if}}{{{body}}}{{#if layout}}
-
-</div>
-    {{> footer}}
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        htmx.onLoad(function() {
 
           // Get all "navbar-burger" elements
           const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -45,6 +36,16 @@
 
         });
     </script>
+  </head>
+  <body>
+    {{> header}}
+<div class="container is-widescreen">
+
+        {{/if}}{{{body}}}{{#if layout}}
+
+</div>
+    {{> footer}}
+
   </body>
 </html>
 {{/if}}
